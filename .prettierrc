@@ -1,0 +1,17 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "endOfLine": "auto",
+  "bracketSpacing": true,
+  "printWidth": 150,
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": ["*.yml", ".prettierrc", ".json"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}
