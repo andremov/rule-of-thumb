@@ -1,0 +1,69 @@
+
+.banner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: var(--color-light-gray);
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    opacity: .2;
+    pointer-events: none;
+  }
+
+  &__left {
+    flex-basis: 40%;
+    padding-right: 1rem;
+  }
+
+  &__hairline {
+    color: var(--color-dark-gray);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: -.07rem;
+  }
+
+  &__title {
+    display: block;
+    color: var(--color-dark-gray);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.05rem;
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--color-dark-gray);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: -.05rem;
+  }
+
+  &__heading {
+    position: relative;
+    margin: 0 0 1rem;
+    color: var(--color-dark-gray);
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__cta {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    border: 2px solid var(--color-darker-background);
+    background: transparent;
+    color: var(--color-darker-gray);
+    font-size: 1.5rem;
+  }
+}

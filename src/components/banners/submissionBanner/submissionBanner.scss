@@ -1,0 +1,40 @@
+.banner-submission {
+  flex-direction: column;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+
+  .banner__right {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .banner-submission {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    .banner__background {
+      top: -230%;
+    }
+
+    .banner__right {
+      width: auto;
+    }
+
+    .banner__heading {
+      margin-bottom: 0;
+      font-size: 1.5rem;
+    }
+
+    .banner__cta {
+      width: 16rem;
+    }
+  }
+}
+
+@media all and (min-width: 1100px) {
+  .banner-submission .banner__cta {
+    width: 20rem;
+  }
+}
