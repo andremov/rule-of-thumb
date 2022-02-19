@@ -1,0 +1,148 @@
+
+main[role="main"] {
+  padding: 0 1rem;
+  margin-top: 2rem;
+}
+
+main h2,
+main h3,
+main h4,
+main h5 {
+  font-weight: 400;
+  margin: 0;
+}
+
+main h2 {
+  color: var(--color-dark-gray);
+  margin: 0 0 2rem;
+  font-size: 2rem;
+}
+
+.past-votes-card {
+  height: 200px;
+  position: relative;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-light-gray);
+
+  svg {
+    transform: scale(1.5);
+  }
+
+  &__result {
+    position: absolute;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+
+    &.green {
+      background-color: var(--color-green-positive);
+    }
+
+    &.yellow {
+      background-color: var(--color-yellow-negative);
+    }
+  }
+
+  &__glass-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #00000000 0%, #00000050 20%);
+  }
+
+  &__info {
+    display: flex;
+    flex: 1;
+    z-index: 1;
+
+    &__quarter {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__half {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-gap: 10px;
+    }
+  }
+
+  &__vote-bar {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    &__fill {
+      height: 50px;
+      display: inline-flex;
+      width: var(--bar-width);
+      font-size: 1.75rem;
+      align-items: center;
+      padding: 0 2rem;
+      box-sizing: border-box;
+      grid-gap: 10px;
+
+      svg {
+
+      }
+
+      &.green {
+        background-color: var(--color-green-positive);
+      }
+
+      &.yellow {
+        background-color: var(--color-yellow-negative);
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__body {
+    font-size: 1.2rem;
+  }
+
+  &__category {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  &__vote-buttons {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+
+    .icon-button {
+      padding: 5px;
+    }
+
+    .black {
+        position: relative;
+        display: block;
+        padding: 1rem 0.5rem;
+        border: 2px solid var(--color-darker-background);
+        background: var(--color-darker-gray);
+        //color: var(--color-darker-gray);
+        color: var(--color-light-gray);
+        font-size: 1.5rem;
+    }
+  }
+}
+
+@media all and (min-width: 1100px) {
+  main h2 {
+    font-size: 2.5rem;
+  }
+}
