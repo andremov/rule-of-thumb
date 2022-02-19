@@ -6,11 +6,12 @@ interface ButtonProps {
     buttonClass: string
     type?: 'button' | 'submit' | 'reset'
     aria?: string
+    onClick?: () => void
 }
 
-export function Button({ children, buttonClass, type, aria }: ButtonProps): JSX.Element {
+export function Button({ children, buttonClass, type, aria, onClick }: ButtonProps): JSX.Element {
     return (
-        <button aria-label={aria} type={type} className={buttonClass}>
+        <button aria-label={aria} type={type} onClick={onClick} className={buttonClass}>
             {children}
         </button>
     )
