@@ -13,11 +13,11 @@ main h5 {
 }
 
 main h3 {
-  font-size: 1.6rem;
+  font-size: 2.6rem;
 }
 
 main h4 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 main h5 {
@@ -30,20 +30,47 @@ main h2 {
   font-size: 2rem;
 }
 
+.post-votes-container {
+  height: 420px;
+  overflow-x: auto;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > select {
+      display: none;
+      border: 2px solid var(--color-dark-gray);
+      border-radius: 0;
+      padding: 0.5rem;
+      width: 150px;
+    }
+  }
+
+  &__scroll {
+    display: flex;
+    width: fit-content;
+  }
+}
+
 .past-votes-card {
-  height: 200px;
+  height: 400px;
+  width: 400px;
   position: relative;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   color: var(--color-light-gray);
   overflow: hidden;
+  transition: 0.1s;
 
   img {
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 160px;
+    width: 100%;
+    z-index: 0;
   }
 
   &__result {
@@ -75,18 +102,17 @@ main h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #00000000 0%, #00000050 20%);
+    background: linear-gradient(90deg, #00000000 0%, #00000080 20%);
+    z-index: 1;
   }
 
   &__info {
     display: flex;
     flex: 1;
-    z-index: 1;
+    flex-direction: column;
 
     &__left-side,
     &__right-side {
-      flex: 2;
-      //max-width: 25%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -97,9 +123,14 @@ main h2 {
       flex: 1;
     }
 
+    &__right-side {
+      flex: 2;
+      z-index: 1;
+    }
+
     &__middle-side {
+      z-index: 1;
       flex: 4;
-      max-width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -123,9 +154,10 @@ main h2 {
       padding: 0 2rem;
       box-sizing: border-box;
       grid-gap: 10px;
+      transition: 0.2s width;
 
       svg {
-        width: 25px;
+        min-width: 25px;
         height: 25px;
       }
 
@@ -140,7 +172,6 @@ main h2 {
       }
     }
   }
-
 
   &__body {
     max-height: 50px;
@@ -182,6 +213,83 @@ main h2 {
   }
 }
 
+@media all and (min-width: 500px) {
+  .post-votes-container {
+    height: auto;
+    overflow-x: visible;
+
+    &__title > select {
+      display: block;
+    }
+
+    &__scroll {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    .past-votes-card {
+      display: inline-flex;
+      min-width: 340px;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  .past-votes-card {
+    &:hover {
+      transform: scale(1.1);
+      z-index: 2;
+      box-shadow: 0 0 5px 5px #00000050;
+    }
+  }
+
+  .post-votes-container:not(.grid-view) {
+    .past-votes-card {
+      display: flex;
+      height: 200px;
+      max-width: none;
+      width: 100%;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      img {
+        max-width: 160px;
+      }
+
+      &__info {
+        flex-direction: row;
+
+        &__right-side {
+          flex: 3;
+        }
+
+        &__middle-side {
+          flex: 5;
+          max-width: 50%;
+          display: flex;
+        }
+      }
+    }
+  }
+
+}
+
+@media all and (min-width: 768px) {
+  .post-votes-container.grid-view {
+    .past-votes-card {
+      max-width: 320px;
+    }
+  }
+}
+
 @media all and (min-width: 1100px) {
   main h2 {
     font-size: 2.5rem;
@@ -198,4 +306,23 @@ main h2 {
   main h5 {
     font-size: 1.1rem;
   }
+
+  .post-votes-container:not(.grid-view) {
+    .past-votes-card {
+      &__info {
+        &__left-side {
+          flex: 1;
+        }
+
+        &__right-side {
+          flex: 2;
+        }
+
+        &__middle-side {
+          flex: 3;
+        }
+      }
+    }
+  }
 }
+
