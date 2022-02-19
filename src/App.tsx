@@ -3,16 +3,16 @@ import { Footer } from './components/footer'
 import { MissionBanner, SubmissionBanner } from './components/banners'
 import { NavBar } from './components/navbar'
 import { Header } from './components/header'
-import { Button } from './components/Button'
+import { PastVotesContainer } from './components/pastvotes'
 
 export function App(): JSX.Element {
     return (
         <React.Fragment>
             <NavBar />
             <Header />
-            <MissionBanner />
             <div className="max-centered">
-                <main role="main">👉 Your code goes here 👈</main>
+                <MissionBanner />
+                <PastVotesContainer />
                 <SubmissionBanner />
                 <Footer />
             </div>
