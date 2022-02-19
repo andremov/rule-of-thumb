@@ -52,7 +52,7 @@ function distanceFrom(date: Date): string {
     return 'Today'
 }
 
-export function PastVotesCard({ name, description, category, lastUpdated, votes: { positive, negative } }: VoteData): JSX.Element {
+export function PastVotesCard({ picture, name, description, category, lastUpdated, votes: { positive, negative } }: VoteData): JSX.Element {
     const totalVotes = positive + negative
     const agreePercent = ((positive / totalVotes) * 100).toFixed(1)
     const disagreePercent = ((negative / totalVotes) * 100).toFixed(1)
@@ -62,16 +62,17 @@ export function PastVotesCard({ name, description, category, lastUpdated, votes:
         <div className={'past-votes-card'}>
             <div className={'past-votes-card__glass-background'} />
             <div className={'past-votes-card__info'}>
-                <div className={'past-votes-card__info__quarter'}>
+                <div className={'past-votes-card__info__left-side'}>
+                    <img src={`/assets/img/${picture}`} alt={name} />
                     <div className={`past-votes-card__result ${agreePercent > disagreePercent ? 'green' : 'yellow'}`}>
                         {agreePercent > disagreePercent ? <ThumbsUp /> : <ThumbsDown />}
                     </div>
                 </div>
-                <div className={'past-votes-card__info__half'}>
+                <div className={'past-votes-card__info__middle-side'}>
                     <h3 className={'past-votes-card__title'}>{name}</h3>
                     <h4 className={'past-votes-card__body'}>{description}</h4>
                 </div>
-                <div className={'past-votes-card__info__quarter'}>
+                <div className={'past-votes-card__info__right-side'}>
                     <h5 className={'past-votes-card__category'}>{`${timeDistance} in ${toTitleCase(category)}`}</h5>
                     <div className={'past-votes-card__vote-buttons'}>
                         <Button buttonClass={'icon-button'} aria="thumbs up">

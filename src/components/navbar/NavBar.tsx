@@ -37,7 +37,7 @@ export function NavBar(): JSX.Element {
                         </li>
                     ))}
                     <li>
-                        <form action="javascript:void(0)">
+                        <form>
                             <input className="nav__search-input" aria-label="search" type="text" />
                             <Button buttonClass={'nav__search icon-button'} type="submit">
                                 <Search />

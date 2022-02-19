@@ -4,15 +4,16 @@ import { ReactComponent as WikipediaLogo } from '../../assets/img/wikipedia.svg'
 import { ReactComponent as ThumbsUp } from '../../assets/img/thumbs-up.svg'
 import { ReactComponent as ThumbsDown } from '../../assets/img/thumbs-down.svg'
 import './header.scss'
+import pic from '../../assets/img/pope-francis.png'
 
 export function Header(): JSX.Element {
     return (
         <header className="hero">
             <img
                 className="hero__background"
-                // srcSet="../../assets/img/pope-francis.png 750w, ../../assets/img/pope-francis.@2x.png 1440w"
-                // sizes="(min-width: 750px) 1440px, 100vw"
-                src={'../../assets/img/pope-francis.png'}
+                srcSet={'assets/img/pope-francis.png 750w, assets/img/pope-francis.@2x.png 1440w'}
+                sizes="(min-width: 750px) 1440px, 100vw"
+                src={pic}
                 alt="Pope Francis"
             />
             <div className="max-centered">

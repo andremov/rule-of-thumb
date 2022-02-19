@@ -227,9 +227,9 @@
   .featured-card {
 
     &__glass-background {
-      //background:
-      //        center no-repeat linear-gradient(var(--color-dark-background), var(--color-dark-background)),
-      //        calc(-50vw + 650px) -6rem/105vw auto no-repeat url(../../public/assets/img/pope-francis.png);
+      background:
+              center no-repeat linear-gradient(var(--color-dark-background), var(--color-dark-background)),
+              calc(-50vw + 650px) -6rem/105vw auto no-repeat url(/public/assets/img/pope-francis.png);
     }
 
     &__content {
