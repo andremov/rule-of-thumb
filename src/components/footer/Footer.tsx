@@ -1,7 +1,7 @@
 import React from 'react'
 import './footer.scss'
-import { ReactComponent as FacebookLogo } from '../../assets/facebook.svg'
-import { ReactComponent as TwitterLogo } from '../../assets/twitter.svg'
+import { ReactComponent as FacebookLogo } from '../../assets/img/facebook.svg'
+import { ReactComponent as TwitterLogo } from '../../assets/img/twitter.svg'
 
 const footerLinks = [
     {
