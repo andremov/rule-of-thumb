@@ -8,8 +8,8 @@ const API = axios.create({
     responseType: 'json',
 })
 
-export const fetchPollsRequest = (): PollInterface[] =>
-    API.get('polls/').then((r: { data: { list: PollInterface[]; count: number } }) => r.data.products)
+export const fetchPollsRequest = (): Promise<PollInterface[]> =>
+    API.get('polls/').then((r: { data: { list: PollInterface[]; count: number } }) => r.data.list)
 
-export const updatePollRequest = (id: string, data: PollInterface): string =>
-    API.patch(`polls/${id}`, data).then((r: { message: string }) => r.message)
+export const updatePollRequest = (id: string, data: PollInterface): Promise<string> =>
+    API.patch(`polls/${id}`, data).then((r: { data: { message: string } }) => r.data.message)

@@ -2,12 +2,20 @@
 button {
   font-family: 'Lato', sans-serif;
   cursor: pointer;
+
+  &[disabled] {
+    opacity: 0.5;
+  }
 }
 
 .icon-button {
   padding: 0;
   border: 0;
   background-color: transparent;
+
+  &.selected {
+    border: 2px solid var(--color-light-gray);
+  }
 
   &[aria-label="thumbs up"] {
     background-color: rgba(var(--color-green-positive), .8);

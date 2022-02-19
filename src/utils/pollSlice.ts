@@ -1,6 +1,6 @@
 // @ts-ignore
 import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
-import { fetchPollsRequest, updatePollRequest } from './api'
+import { fetchPollsRequest } from './api'
 import { PollInterface, PollState, StoreInterface } from './types'
 
 const initialState: PollState = {
@@ -56,22 +56,6 @@ export const refreshPolls = async (dispatch: Dispatch): Promise<void> => {
     } else {
         dispatch(pollsReceived(polls))
     }
-}
-
-export const sendPollVote = async (dispatch: Dispatch, data: { _id: string; vote: number }): Promise<void> => {
-    let poll
-    switch (data.vote) {
-        case -1:
-            poll = dispatch(voteNegative(data._id))
-            break
-        case 1:
-            poll = dispatch(votePositive(data._id))
-            break
-    }
-    if (poll) {
-        await updatePollRequest(data._id, poll)
-    }
-    dispatch(refreshPolls)
 }
 
 export const getPolls = (state: StoreInterface): PollInterface[] => state.polls.data
