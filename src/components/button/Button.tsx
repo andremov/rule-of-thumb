@@ -1,4 +1,5 @@
 import React from 'react'
+import './button.scss'
 
 interface ButtonProps {
     children?: JSX.Element | JSX.Element[] | string

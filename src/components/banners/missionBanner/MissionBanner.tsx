@@ -2,7 +2,7 @@ import React from 'react'
 import { GenericBanner } from '../GenericBanner'
 import './missionBanner.scss'
 import '../banners.scss'
-import { Button } from '../../Button'
+import { Button } from '../../button'
 import { ReactComponent as Close } from '../../../assets/img/close.svg'
 
 export function MissionBanner(): JSX.Element {

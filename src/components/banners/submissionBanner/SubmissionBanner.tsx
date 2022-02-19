@@ -2,7 +2,7 @@ import React from 'react'
 import { GenericBanner } from '../GenericBanner'
 import './submissionBanner.scss'
 import '../banners.scss'
-import { Button } from '../../Button'
+import { Button } from '../../button'
 
 export function SubmissionBanner(): JSX.Element {
     return (

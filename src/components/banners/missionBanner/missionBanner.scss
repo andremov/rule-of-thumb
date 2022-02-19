@@ -3,6 +3,10 @@
   .banner__right {
     flex-basis: 60%;
   }
+
+  .icon-button {
+    display: none;
+  }
 }
 
 @media all and (min-width: 500px) {

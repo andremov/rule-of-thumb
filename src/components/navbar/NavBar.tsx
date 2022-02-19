@@ -1,6 +1,6 @@
 import React from 'react'
 import './navbar.scss'
-import { Button } from '../Button'
+import { Button } from '../button'
 import { ReactComponent as Hamburger } from '../../assets/img/hamburger.svg'
 import { ReactComponent as Search } from '../../assets/img/search.svg'
 

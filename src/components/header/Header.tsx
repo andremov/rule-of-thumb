@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../Button'
+import { Button } from '../button'
 import { ReactComponent as WikipediaLogo } from '../../assets/img/wikipedia.svg'
 import { ReactComponent as ThumbsUp } from '../../assets/img/thumbs-up.svg'
 import { ReactComponent as ThumbsDown } from '../../assets/img/thumbs-down.svg'
@@ -11,7 +11,7 @@ export function Header(): JSX.Element {
                 className="hero__background"
                 // srcSet="../../assets/img/pope-francis.png 750w, ../../assets/img/pope-francis.@2x.png 1440w"
                 // sizes="(min-width: 750px) 1440px, 100vw"
-                src="../../assets/img/pope-francis.@2x.png"
+                src={'../../assets/img/pope-francis.png'}
                 alt="Pope Francis"
             />
             <div className="max-centered">
