@@ -34,6 +34,24 @@ hr[role="separator"] {
   display: contents;
 }
 
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid rgba(var(--color-green-positive), 0 );
+  border-bottom-color: rgba(var(--color-green-positive), 1);
+  animation: spinner-anim 1s linear infinite;
+}
+
+@keyframes spinner-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 @media all and (min-width: 768px) {
   html, body {
     font-size: 14px;

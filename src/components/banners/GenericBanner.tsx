@@ -1,11 +1,6 @@
 import React from 'react'
 import './banners.scss'
-
-interface GenericBannerProps {
-    children?: JSX.Element | JSX.Element[]
-    aria: string
-    bannerClass: string
-}
+import { GenericBannerProps } from '../../utils/types'
 
 export function GenericBanner({ children, aria, bannerClass }: GenericBannerProps): JSX.Element {
     return (

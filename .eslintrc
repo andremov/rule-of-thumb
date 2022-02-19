@@ -1,7 +1,13 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier", "react", "import", "react-redux"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "react",
+    "import",
+    "react-redux"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -20,7 +26,12 @@
     "comma-dangle": "off",
     "react/jsx-filename-extension": [
       1,
-      { "extensions": [".tsx", ".jsx"] }
+      {
+        "extensions": [
+          ".tsx",
+          ".jsx"
+        ]
+      }
     ],
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
@@ -32,16 +43,7 @@
         "devDependencies": true
       }
     ],
-    "no-underscore-dangle": [
-      "error",
-      {
-        "allow": [
-          "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__",
-          "_resources",
-          "_adapters"
-        ]
-      }
-    ]
+    "no-underscore-dangle": "off"
   },
   "globals": {
     "window": true,
