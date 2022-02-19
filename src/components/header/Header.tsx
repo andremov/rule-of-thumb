@@ -3,6 +3,7 @@ import { Button } from '../button'
 import { ReactComponent as WikipediaLogo } from '../../assets/img/wikipedia.svg'
 import { ReactComponent as ThumbsUp } from '../../assets/img/thumbs-up.svg'
 import { ReactComponent as ThumbsDown } from '../../assets/img/thumbs-down.svg'
+import './header.scss'
 
 export function Header(): JSX.Element {
     return (
