@@ -24,7 +24,7 @@ const footerLinks = [
 export function Footer(): JSX.Element {
     return (
         <React.Fragment>
-            <hr role="separator" />
+            <hr />
             <footer className="footer">
                 <div className="footer__links">
                     <ul>

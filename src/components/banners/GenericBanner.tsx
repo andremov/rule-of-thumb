@@ -2,7 +2,7 @@ import React from 'react'
 import './banners.scss'
 
 interface GenericBannerProps {
-    children: JSX.Element | JSX.Element[] | undefined
+    children?: JSX.Element | JSX.Element[]
     aria: string
     bannerClass: string
 }

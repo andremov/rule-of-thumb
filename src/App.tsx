@@ -2,6 +2,7 @@ import React from 'react'
 import { Footer } from './components/footer'
 import { MissionBanner, SubmissionBanner } from './components/banners'
 import { NavBar } from './components/navbar'
+import { Button } from './components/Button'
 
 export function App(): JSX.Element {
     return (
@@ -38,12 +39,12 @@ export function App(): JSX.Element {
                             </p>
                             <p className="featured-card__cta">What’s Your Veredict?</p>
                             <div className="featured-card__buttons">
-                                <button className="icon-button" aria-label="thumbs up">
+                                <Button buttonClass="icon-button" aria="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button className="icon-button" aria-label="thumbs down">
+                                </Button>
+                                <Button buttonClass="icon-button" aria="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>

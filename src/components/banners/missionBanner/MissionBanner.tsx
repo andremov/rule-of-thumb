@@ -2,6 +2,7 @@ import React from 'react'
 import { GenericBanner } from '../GenericBanner'
 import './missionBanner.scss'
 import '../banners.scss'
+import { Button } from '../../Button'
 
 export function MissionBanner(): JSX.Element {
     return (
@@ -16,13 +17,13 @@ export function MissionBanner(): JSX.Element {
                     share your opinion, we analyze and put the data in a public report.
                 </p>
             </div>
-            <button className="icon-button" aria-label="close">
+            <Button buttonClass="icon-button" aria="close">
                 <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                     <g stroke="#000" strokeWidth="2" fill="none" fillRule="evenodd">
                         <path d="M1 19L19 1M1 1l18 18" />
                     </g>
                 </svg>
-            </button>
+            </Button>
         </GenericBanner>
     )
 }

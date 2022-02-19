@@ -2,6 +2,7 @@ import React from 'react'
 import { GenericBanner } from '../GenericBanner'
 import './submissionBanner.scss'
 import '../banners.scss'
+import { Button } from '../../Button'
 
 export function SubmissionBanner(): JSX.Element {
     return (
@@ -18,7 +19,7 @@ export function SubmissionBanner(): JSX.Element {
                 <h2 className="banner__heading">Is there anyone else you would want us to add?</h2>
             </div>
             <div className="banner__right">
-                <button className="banner__cta">Submit a name</button>
+                <Button buttonClass="banner__cta">Submit a name</Button>
             </div>
         </GenericBanner>
     )
