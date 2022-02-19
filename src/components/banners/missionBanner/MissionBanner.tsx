@@ -6,6 +6,14 @@ import { Button } from '../../button'
 import { ReactComponent as Close } from '../../../assets/img/close.svg'
 
 export function MissionBanner(): JSX.Element {
+    const [hidden, hide] = React.useState(false)
+
+    const handleClick = (): void => hide(true)
+
+    if (hidden) {
+        return <React.Fragment />
+    }
+
     return (
         <GenericBanner bannerClass={'mission'} aria={'Speak Out'}>
             <div className="banner__left">
@@ -18,7 +26,7 @@ export function MissionBanner(): JSX.Element {
                     share your opinion, we analyze and put the data in a public report.
                 </p>
             </div>
-            <Button buttonClass="icon-button" aria="close">
+            <Button buttonClass="icon-button" aria="close" onClick={handleClick}>
                 <Close />
             </Button>
         </GenericBanner>
