@@ -48,53 +48,57 @@ export function PastVotesCard(props: PollInterface): JSX.Element {
 
     return (
         <div className={'past-votes-card'}>
+            <img src={picture} alt={name} className={'past-votes-card__picture'} />
             <div className={'past-votes-card__glass-background'} />
-            <div className={'past-votes-card__info'}>
-                <div className={'past-votes-card__info__left-side'}>
-                    <img src={picture} alt={name} />
-                    <div className={`past-votes-card__result ${agreePercent > disagreePercent ? 'green' : 'yellow'}`}>
-                        {agreePercent > disagreePercent ? <ThumbsUp /> : <ThumbsDown />}
-                    </div>
-                </div>
-                <div className={'past-votes-card__info__middle-side'}>
-                    <h3 className={'past-votes-card__title'}>{name}</h3>
-                    <h4 className={'past-votes-card__body'}>{description}</h4>
-                </div>
-                <div className={'past-votes-card__info__right-side'}>
-                    <h5 className={'past-votes-card__category'}>
-                        {Math.abs(selectedVote) === 2 ? 'Thank you for your vote!' : `${timeDistance} in ${toTitleCase(category)}`}
-                    </h5>
-                    <div className={'past-votes-card__vote-buttons'}>
-                        <Button
-                            disabled={Math.abs(selectedVote) === 2}
-                            buttonClass={`icon-button ${selectedVote > 0 ? 'selected' : ''}`}
-                            aria="thumbs up"
-                            onClick={handleUp}
-                        >
-                            <ThumbsUp />
-                        </Button>
-                        <Button
-                            disabled={Math.abs(selectedVote) === 2}
-                            buttonClass={`icon-button ${selectedVote < 0 ? 'selected' : ''}`}
-                            aria="thumbs down"
-                            onClick={handleDown}
-                        >
-                            <ThumbsDown />
-                        </Button>
-                        <Button disabled={selectedVote === 0} onClick={sendVote} buttonClass={'black'}>
-                            {Math.abs(selectedVote) === 2 ? 'Vote Again' : 'Vote Now'}
-                        </Button>
-                    </div>
-                </div>
+            <div className={`past-votes-card__result ${agreePercent > disagreePercent ? 'green' : 'yellow'}`}>
+                {agreePercent > disagreePercent ? <ThumbsUp /> : <ThumbsDown />}
             </div>
-            <div className={'past-votes-card__vote-bar'}>
-                <div style={{ '--bar-width': `${agreePercent}%` }} className={'past-votes-card__vote-bar__fill green'}>
-                    <ThumbsUp />
-                    <span>{agreePercent}%</span>
+            <div className={'past-votes-card__content'}>
+                <div className={'past-votes-card__info'}>
+                    <div className={'past-votes-card__info__left-side'}>
+                        <h3 className={'past-votes-card__title'}>{name}</h3>
+                        <h4 className={'past-votes-card__description'}>{description}</h4>
+                    </div>
+                    <div className={'past-votes-card__info__right-side'}>
+                        <h5 className={'past-votes-card__category'}>
+                            {Math.abs(selectedVote) === 2 ? 'Thank you for your vote!' : `${timeDistance} in ${toTitleCase(category)}`}
+                        </h5>
+                        <div className={'past-votes-card__vote-buttons'}>
+                            {Math.abs(selectedVote) !== 2 && (
+                                <React.Fragment>
+                                    <Button
+                                        disabled={Math.abs(selectedVote) === 2}
+                                        buttonClass={`icon-button ${selectedVote > 0 ? 'selected' : ''}`}
+                                        aria="thumbs up"
+                                        onClick={handleUp}
+                                    >
+                                        <ThumbsUp />
+                                    </Button>
+                                    <Button
+                                        disabled={Math.abs(selectedVote) === 2}
+                                        buttonClass={`icon-button ${selectedVote < 0 ? 'selected' : ''}`}
+                                        aria="thumbs down"
+                                        onClick={handleDown}
+                                    >
+                                        <ThumbsDown />
+                                    </Button>
+                                </React.Fragment>
+                            )}
+                            <Button disabled={selectedVote === 0} onClick={sendVote} buttonClass={'black'}>
+                                {Math.abs(selectedVote) === 2 ? 'Vote Again' : 'Vote Now'}
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                <div style={{ '--bar-width': `${disagreePercent}%` }} className={'past-votes-card__vote-bar__fill yellow'}>
-                    <span>{disagreePercent}%</span>
-                    <ThumbsDown />
+                <div className={'past-votes-card__vote-bar'}>
+                    <div style={{ '--bar-width': `${agreePercent}%` }} className={'past-votes-card__vote-bar__fill green'}>
+                        <ThumbsUp />
+                        <span>{agreePercent}%</span>
+                    </div>
+                    <div style={{ '--bar-width': `${disagreePercent}%` }} className={'past-votes-card__vote-bar__fill yellow'}>
+                        <span>{disagreePercent}%</span>
+                        <ThumbsDown />
+                    </div>
                 </div>
             </div>
         </div>

@@ -23,6 +23,7 @@
   }
 
   &__hamburger {
+    padding: 0;
     position: relative;
     top: 2rem;
     right: 1rem;
@@ -72,6 +73,7 @@
     width: 24px;
     height: 24px;
     margin-left: .5rem;
+    padding: 0;
   }
 
   &__search-input {
